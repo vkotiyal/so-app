@@ -20,7 +20,7 @@
   </head>
   <body>
     <!-- partial:index.partial.html -->
-    <form class="registration" action="POST" data-netlify="true">
+    <form class="registration" method="POST" data-netlify="true">
       <h1>👋 Welcome to SO?<br/><p style="font-size: 14px;">Dating Simplified!</p></h1>
 
       <label>
@@ -70,10 +70,11 @@
       </label> -->
 
       <button type="submit">Let's Get Started!</button>
+      <!-- <input type="submit" placeholder="Let's Get Started!"> -->
 
       <div class="done">
         <h1>👌 You're all set!</h1>
-        <a href="javascript:window.location.reload(true)">Again</a>
+        <a href="javascript:window.location.reload(true)">Go Back</a>
       </div>
       <div class="progress">
         <progress />
