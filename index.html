@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" >
+  <head>
+    <meta charset="UTF-8">
+    <title>SO? - Significant Other</title>
+    <link rel="stylesheet" href="./style.css">
+
+    <script>
+      function showPosition() {
+          if(navigator.geolocation) {
+              navigator.geolocation.getCurrentPosition(function(position) {
+                  var positionInfo = "Your current position is (" + "Latitude: " + position.coords.latitude + ", " + "Longitude: " + position.coords.longitude + ")";
+                  document.getElementById("result").innerHTML = positionInfo;
+              });
+          } else {
+              alert("Sorry, your browser does not support HTML5 geolocation.");
+          }
+      }
+    </script>
+  </head>
+  <body>
+    <!-- partial:index.partial.html -->
+    <form class="registration" action="POST" data-netlify="true">
+      <h1>👋 Welcome to SO?<br/><p style="font-size: 14px;">Dating Simplified!</p></h1>
+
+      <label>
+        <input type="text" name="name" id="name" placeholder="Your Name" required>
+      </label>
+
+      <label>
+        <input type="number" name="age" id="age" placeholder="Your Age" required>
+      </label>
+
+      <!-- <label>
+        <input type="text" name="locality" id="locality" placeholder="Your locality" required>
+      </label> -->
+
+      <label for="preference">
+        <select name="preference" id="preference">
+          <option value="" disabled selected hidden>Your Preference</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="others">Others</option>
+          <option value="none">No Preference</option>
+        </select>
+      </label>
+
+      <div>
+        <div data-netlify-recaptcha="true"></div>
+      </div>
+      
+      <!-- <div id="result">
+      <!- Position information will be inserted here */ ->
+      </div>
+      <button type="button" onclick="showPosition();">Show Position</button>
+
+      <label class="pure-material-radio">
+        <input type="radio" name="type" required>
+        <span>Personal Account</span>
+      </label>
+
+      <label class="pure-material-radio">
+        <input type="radio" name="type" required>
+        <span>Business Account</span>
+      </label>
+
+      <label class="pure-material-checkbox">
+        <input type="checkbox" required>
+        <span>I agree to the <a href="https://codepen.io/collection/nZKBZe/" target="_blank" title="Actually not a Terms of Service">Terms of Service</a></span>
+      </label> -->
+
+      <button type="submit">Let's Get Started!</button>
+
+      <div class="done">
+        <h1>👌 You're all set!</h1>
+        <a href="javascript:window.location.reload(true)">Again</a>
+      </div>
+      <div class="progress">
+        <progress />
+      </div>
+    </form>
+
+    <!-- partial -->
+    <script  src="./script.js"></script>
+
+  </body>
+</html>
